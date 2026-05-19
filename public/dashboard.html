@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Datos</title>
+    <!-- JQUERY  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- DATATABLES  -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <!-- Firebase Storage -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+
+    <link rel="shortcut icon" href="assets/logo_phrases.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/firebase.js"></script>
+    <script src="js/dashboard.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="assets/logo_phrases.jpeg" alt=" ">
+            </a>
+        </div>
+        <h1>Control de Datos</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="btn-logout">
+            <path fill="currentColor" fill-rule="evenodd"
+                d="M11 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3zm1.293 6.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L13.586 13H5a1 1 0 1 1 0-2h8.586l-1.293-1.293a1 1 0 0 1 0-1.414"
+                clip-rule="evenodd" />
+        </svg>
+    </header>
+
+    <section id="control-phrases">
+        <div class="container-btn-modal">
+            <button id="btn-add-open-modal">Añadir</button>
+        </div>
+
+        <h2>Frases</h2>
+
+        <table id="tabla-frases">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Autor</th>
+                    <th>Frase</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Script -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Modal Añadir -->
+    <dialog id="modal-add">
+        <div class="modal-form">
+            <h2>Añadir Nueva frase</h2>
+            <form id="form-add">
+                <label for="add-frase">Frase:</label>
+                <textarea id="add-frase" name="add-frase" placeholder="Escribe tu frase motivacional aquí..."
+                    required></textarea>
+
+                <label for="add-autor">Autor:</label>
+                <input type="text" name="add-autor" id="add-autor" placeholder="Nombre del autor de la frase" required>
+
+                <label for="add-imagen">Imagen:</label>
+                <input type="file" id="add-imagen" name="add-imagen" accept="image/*" required>
+
+                <label for="add-imagen">
+                    <img id="preview-imagen-add" class="hidden" width="100" height="100">
+                </label>
+
+                <button type="submit">Añadir</button>
+                <button type="button" id="btn-add-close-modal" class="btn-cancelar">Cerrar</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Modal Confirmar Eliminación -->
+    <dialog id="modal-delete">
+        <div class="modal-form">
+            <h2>Confirmar Eliminación</h2>
+            <form>
+                <p>¿Estás seguro de que deseas eliminar esta frase?</p>
+                <button type="button" id="btn-delete">Eliminar</button>
+                <button type="button" id="btn-delete-close-modal" class="btn-cancelar">Cerrar</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Modal Editar -->
+    <dialog id="modal-edit">
+        <div class="modal-form">
+            <h2>Editar frase</h2>
+            <form id="form-edit">
+                <label for="edit-frase">Frase:</label>
+                <textarea id="edit-frase" name="edit-frase" placeholder="Escribe tu frase motivacional aquí..."
+                    required></textarea>
+
+                <label for="edit-autor">Autor:</label>
+                <input type="text" name="edit-autor" id="edit-autor" placeholder="Nombre del autor de la frase" required>
+
+                <label for="edit-imagen">Imagen:</label>
+                <input type="file" id="edit-imagen" name="edit-imagen" accept="image/*">
+
+                <label for="edit-imagen">
+                    <img id="preview-imagen-edit" class="hidden" width="100" height="100">
+                </label>
+
+                <button type="submit">Actualizar</button>
+                <button type="button" id="btn-edit-close-modal" class="btn-cancelar">Cerrar</button>
+            </form>
+        </div>
+    </dialog>
+</body>
+
+</html>

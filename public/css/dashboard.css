@@ -1,0 +1,357 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6d4b2e6;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navbar section */
+header {
+    justify-content: space-between;
+    background-color: #ffa500;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #fff;
+    display: flex;
+    padding: 15px 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 1.8em;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+header .logo {
+    flex-shrink: 0;
+    height: 80px;
+    width: 80px;
+}
+
+header .logo img {
+    transition: transform 0.5s ease;
+    object-fit: cover;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+header .logo img:hover {
+    transform: scale(1.08);
+}
+
+header svg {
+    transition: all 0.5s ease;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    height: 40px;
+    width: 40px;
+}
+
+header svg:hover {
+    color: #ddd;
+    transform: scale(1.2);
+}
+
+header svg:active {
+    transform: scale(1.05);
+}
+
+/* Buttons section */
+.container-btn-modal {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+/* Control de propiedades section */
+#control-phrases {
+    background-color: #e6d4b2e6;
+    padding: 20px;
+}
+
+#control-phrases h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 20px 0;
+    padding-top: 30px;
+    font-size: 2.5em;
+}
+
+/* Tablas */
+table {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    border-collapse: collapse;
+    font-weight: bold;
+    width: 100%;
+    margin: 10px;
+}
+
+th {
+    background-color: #cd3739;
+    border: 1px solid #000;
+    color: #ffffff;
+}
+
+th,
+td {
+    border-bottom: 2px solid #233544;
+    text-align: left;
+    padding: 10px;
+}
+
+table td {
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+tr {
+    border: 2px solid #233544;
+}
+
+tbody {
+    color: #000000 !important;
+}
+
+tbody svg,
+tbody img {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+}
+
+/* Table DataTable */
+.dataTables_wrapper {
+    background-color: #333 !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 10px 5px !important;
+}
+
+.dataTables_wrapper label select {
+    background-color: #cd3739 !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+.dataTables_wrapper input {
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Tabla buttons */
+table button {
+    transition: transform 0.5s ease;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+table button:hover {
+    transform: scale(1.3);
+}
+
+table button:active {
+    transform: scale(0.9);
+}
+
+table button svg {
+    transition: color 0.3s ease;
+}
+
+table button svg:hover {
+    color: #ddd;
+}
+
+/* Modales */
+dialog {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: solid 1px #000;
+    border-radius: 20px;
+    padding: 0;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Form modales */
+.modal-form {
+    background-color: #f4f4f4;
+    padding: 0 20px 20px;
+    border-radius: 8px;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.modal-form h2 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 2.5em;
+}
+
+.modal-form form {
+    flex-direction: column;
+    display: flex;
+    max-width: 100%;
+}
+
+.modal-form form label {
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+.modal-form form input,
+.modal-form form textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1em;
+}
+
+.modal-form form input::placeholder,
+.modal-form form textarea::placeholder {
+    font-style: italic;
+}
+
+.modal-form form input:focus,
+.modal-form form textarea:focus {
+    box-shadow: 0 0 25px #e6d4b2e6;
+    border-color: #ffa500;
+    outline: none;
+}
+
+.modal-form form textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+.modal-form form img {
+    border: solid 1px #ddd;
+    margin: 0px auto;
+    overflow: hidden;
+    display: block;
+    border-radius: 20px;
+}
+
+.modal-form form button,
+.container-btn-modal button {
+    transition: transform 0.7s ease, box-shadow 0.7s ease, background-color 0.3s ease;
+    background-color: #4CAF50;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 14px 22px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.modal-form form button:hover,
+.container-btn-modal button:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.03);
+}
+
+.modal-form form button:active,
+.container-btn-modal button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+.btn-cancelar {
+    background-color: #cd3739 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    #buttons .container-btn-modal {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #control-phrases h2 {
+        font-size: 1.8em;
+    }
+
+    table {
+        white-space: nowrap;
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header nav ul li a {
+        font-size: 1em;
+    }
+
+    #buttons .container-btn-modal {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #control-phrases h2 {
+        font-size: 1.5em;
+    }
+
+    table {
+        white-space: nowrap;
+        overflow-x: auto;
+        display: block;
+    }
+}

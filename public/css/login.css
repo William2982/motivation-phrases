@@ -1,0 +1,106 @@
+/* General */
+body {
+    background: url("../assets/logo_phrases.jpeg") no-repeat center;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-cancelar {
+    background-color: #cd3739 !important;
+}
+
+/* Form login */
+#login {
+    box-shadow: 0 4px 15px #e1e1e1;
+    background: #e6cdcde6;
+    backdrop-filter: blur(1px);
+    padding: 0 20px 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px;
+    width: 100%;
+}
+
+#login h2 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 2.5em;
+}
+
+#login form {
+    flex-direction: column;
+    display: flex;
+    max-width: 100%;
+}
+
+#login form label {
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+#login form input {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1em;
+}
+
+#login form input::placeholder {
+    font-style: italic;
+}
+
+#login form input:focus {
+    box-shadow: 0 0 25px #4caf504d;
+    border-color: #4CAF50;
+    outline: none;
+}
+
+#login form button {
+    transition: transform 0.7s ease, box-shadow 0.7s ease, background-color 0.3s ease;
+    background-color: #4CAF50;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 14px 22px;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+#login form button:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.03);
+}
+
+#login form button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #login h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    #login h2 {
+        font-size: 1.5em;
+    }
+}
